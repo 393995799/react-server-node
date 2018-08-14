@@ -71,7 +71,7 @@ class PublishModal extends Component {
                 title: 'Date',
                 dataIndex: 'operatorTimeText',
                 key: 'operatorTimeText',
-                width: 100,
+                width: 110,
             }],
             data: [],
         }

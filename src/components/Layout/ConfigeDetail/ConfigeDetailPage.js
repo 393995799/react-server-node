@@ -11,6 +11,7 @@ import SiderModule from './components/SiderModule'
 import ProjectInfo from './components/ProjectInfo'
 import PublishModal from './components/PublishModal'
 import NoProject from './components/NoProject'
+import CheckboxList from '../components/checkboxList/CheckboxList'
 import axios from '../../../utils/request'
 
 const { Content } = Layout
@@ -41,6 +42,7 @@ class ConfigeDetailPage extends Component {
                 title: '发布状态',
                 dataIndex: 'status',
                 key: 'status',
+                width: 120,
                 render: (text) => (<span>{text.releaseStatusText}</span>)
             }, {
                 title: 'Key',
@@ -64,9 +66,11 @@ class ConfigeDetailPage extends Component {
                 title: 'Date',
                 dataIndex: 'operatorTimeText',
                 key: 'operatorTimeText',
+                width: 200,
             }, {
                 title: 'Action',
                 key: 'action',
+                width: 100,
                 render: (text, record) => {
                     return (
                         <div className={ styles.fintSize16 }>
@@ -333,6 +337,8 @@ class ConfigeDetailPage extends Component {
                                     <Button type="primary" onClick={this.showModal}>+新增配置</Button>
                                     <PublishModal keyStatusRender={this.keyStatusRender} />
                                 </div>
+                                <CheckboxList />
+
                             </div>
 
                             <Tabs defaultActiveKey="1" onChange={this.tabChange}>
